@@ -1,0 +1,1087 @@
+html{
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+}
+:root{
+    --main:#8d99af;
+    --sec:#2b2d42;
+}
+main{
+    background-image: url(imgs/banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%100%;
+}
+/* start-nav */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--main);
+    position: relative;
+}
+nav .right{
+    display: flex;
+    align-items: center;
+    gap:40px;
+}
+nav .right ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav .right ul li{
+    list-style: none;
+    padding: 40px;
+    font-size: 20px;
+}
+nav .right ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
+}
+nav .right ul li a:hover ,
+nav .right ul li a.active{
+ color: var(--main);
+}
+nav .right button{
+    padding: 10px 30px;
+    display: flex;
+    gap: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+}
+nav .right button i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main);
+    background-color: var(--main);
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+}
+nav .right button:hover{
+    background-color: var(--main);
+    color: #fff;
+}
+nav .right .bi-list-nested{
+    color: white;
+    font-size: 25px;
+    display: none;
+}
+@media (max-width:1000px) {
+    nav .right button{
+        display: none;
+    }
+    nav .right ul li{
+        padding: 40px 10px;
+        font-size: 18px;
+    }
+}
+@media (max-width:800px) {
+    nav .right .bi-list-nested{
+        display: block;
+        transition: 0.5s;
+        padding: 40px;
+    }
+    nav .right .bi-list-nested:last-child:hover{
+        color: var(--main);
+        transform: rotate(45deg);
+    }
+    nav .right ul{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translatex(-50%);
+        background-color: #fff;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        transition: 0.5s;
+
+        height: 0;
+        opacity: 0;
+        top:150%;
+        overflow: hidden;
+    }
+    nav .right:hover ul{
+        height: auto;
+        opacity: 1;
+        top:100%;
+        overflow: visible;
+    }
+    nav .right ul li{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-bottom: 1px solid #8d99af71;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    nav .right ul li:last-child{
+        border-bottom: none;
+    }
+    nav .right ul li a{
+        color: #000;
+    }
+    nav .right ul li:hover{
+        background-color: #f7f7f7;
+    }
+    nav .right ul li:hover a{
+        color: var(--main);
+    }
+}
+/* end-nav */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* start-header */
+header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+header .container h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+header .container h1 p{
+    font-size: 16px;
+    font-weight: 500;
+}
+header .container b{
+    font-size: 48px;
+}
+header .container .search{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+    border-radius:20px;
+}
+header .container .search .card{
+    width: calc((100% - 352px)/ 4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 40px;
+    position: relative;
+    cursor: pointer;
+}
+header .container .search .card .drop-1{
+    width: 69%;
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: 0.5s;
+    border: 1px solid black;
+    display: none;
+}
+header .container .search .card:hover .drop-1{
+    display: block;
+}
+header .container .search .card .drop-1 ul li{
+    list-style: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+header .container .search .card .drop-1 ul li:hover{
+    background-color: var(--main);
+}
+header .container .search input{
+    width: calc((100% - 352px) / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-right: 1px solid #0000006b;
+    border-left: 1px solid #0000006b;
+    padding: 3px 40px;
+}
+header .container .search input::placeholder{
+    font-size: 16px;
+}
+header .container .search .action{
+    width: calc((100% - 352px) / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    gap: 20px;
+    padding: 20px 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    background-color: var(--main);
+}
+header .container .search .action i{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--main);
+}
+header .container .catego{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin: 50px;
+}
+header .container .circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header .container .catego .circle i{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--main);
+    transition: 0.5s;
+    cursor: pointer;
+}
+header .container .catego .circle p{
+    color: #fff;
+}
+header .container .catego .circle i:hover{
+    background-color:var(--sec) ;
+}
+@media (max-width:1000px) {
+    header .container .search{
+        flex-direction: column;
+        gap: 5px;
+    }
+    header .container .search .card{
+        width: 80%;
+        border: 1px var(--main) solid;
+        margin: 10px 0;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    header .container .search input{
+        width: 80%;
+        border: 1px var(--main) solid;
+        box-sizing: border-box;
+        padding: 15px;
+        border-radius:10px ;
+    }
+    header .container .search .action{
+        width: 80%;
+        box-sizing: border-box;
+        border-radius:10px ;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width:800px) {
+    header .container .catego{
+        gap: 40px;
+    }
+    header .container .catego .circle p{
+        display: none;
+    }
+}
+@media (max-width:400px) {
+    header .container h1 b{
+        font-size:  24px ;
+    }
+}
+/* end-header */
+
+
+
+
+
+
+
+
+
+
+
+
+/* sec-categories */
+.categories ,
+.listing ,
+.contact ,
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    padding-bottom:150px ;
+    gap: 50px;
+    border-bottom: 1px solid #8d99af7c;
+}
+.categories h2 ,
+.listing h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+.categories h2 b ,
+.listing h3 b ,
+.contact h4{
+    font-size: 32px;
+}
+.categories h2 p ,
+.listing h3 p{
+    font-size: 16px;
+    color: var(--main);
+    font-weight: normal;
+}
+.categories .container{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: var(--sec);
+    width: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.categories .container ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    /* align-items: center;
+    justify-content: center; */
+    position: relative;
+}
+.categories .container ul li{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 15px;
+    width: 30%;
+    padding: 50px 97px 50px 50px;
+    list-style: none;
+    background-color: var(--main);
+    color: #fff;
+    transition: 0.5s;
+}
+.categories .container ul li .side{
+    position: absolute;
+    background-color: var(--sec);
+    left: 300%;
+    top: 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 30px;
+    /* width: 300%; */
+    height: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.categories .container ul li:hover .side{
+    height: 100vh;
+    left: 100%;
+    opacity: 1;
+}
+.categories .container ul li .side .details .left{
+    width: 300px;
+}
+.categories .container ul li .contain-img{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    font-size: 22px;
+    color: var(--main);
+    cursor: pointer;
+}
+.categories .container ul li:hover{
+    background-color: transparent;
+}
+.categories .container .details{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px;
+}
+.categories .container .details .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.categories .container .details .left b{
+font-size: 20px;
+color: #fff;
+}
+.categories .container .details .left p{
+    line-height: 2;
+    color: #fff;
+}
+.categories .container .details .left button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 95%;
+    padding: 15px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.categories .container .details .left button i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main);
+    background-color: var(--main);
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+}
+.categories .container .details .left button:hover{
+    background-color: var(--main);
+    color: white;
+}
+.categories .container .details .right img{
+    border-radius: 10px;
+
+}
+@media (max-width:1260px) {
+    .categories .container ul li{
+        justify-content: center;
+        padding: 50px 40px;
+    } 
+    .categories .container ul li span{
+        display: none;
+    }
+}
+@media (max-width:1060px) {
+    .categories .container{
+        flex-direction: column;
+        width: 90%;
+    }
+    .categories .container ul{
+        width: 100%;
+        align-items: center;
+    justify-content: center;
+    }
+    .categories .container ul li{
+        width: 95%;
+    }
+    .categories .container .details{
+        flex-direction: column;
+        align-items: center;
+    }
+    .categories .container .details .right{
+        width: 70%;
+    }
+    .categories .container .details .right img{
+        width: 100%;
+        height: 60vh;
+    }
+    .categories .container ul li .side{
+        top: 100%;
+        width: 100%;
+    }
+    .categories .container ul li .side .details .left{
+        width: 100%;
+    }
+    .categories .container ul li:hover .side{
+        left:0;
+        height: 100vh;
+    }
+}
+@media (max-width:545px) {
+    .categories .container ul li:hover .side{
+        height: 120vh;
+    }
+}
+@media (max-width:378px) {
+    .categories .container ul li:hover .side{
+        height: 140vh;
+    }
+}
+@media (max-width:300px) {
+    .categories .container ul li:hover .side{
+        height: 180vh;
+    }
+}
+@media (max-width:240px) {
+    .categories .container ul li:hover .side{
+        height: 210vh;
+    }
+}
+/* sec-categories */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sec-listing */
+.listing .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.listing .container .card{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    /* gap:40px; */
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.listing .container .card .left img{
+    margin-bottom: -4px;
+}
+.listing .container .card .right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.listing .container .card .right .details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap:30px;
+}
+.listing .container .card .right .details .top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+}
+.listing .container .card .right .details .top .text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    direction: ltr;
+}
+.listing .container .card .right .details .top .text b{
+    font-size: 19px;
+}
+.listing .container .card .right .details .top .text p{
+    color: var(--main);
+    font-size: 17px;
+}
+.listing .container .card .right .details .top .reviews{
+    display: flex;
+    gap: 10px;
+    direction: ltr;
+}
+.listing .container .card .right .details .top .reviews span{
+    opacity: 0.7;
+}
+.listing .container .card .right .details .middle{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.listing .container .card .right .details .middle b{
+    font-weight: normal;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.listing .container .card .right .details .middle b img{
+    background-color: var(--main);
+    padding: 10px;
+    border-radius: 50%;
+}
+.listing .container .card .right .details .middle p{
+    opacity: 0.8;
+}
+.listing .container .card .right .details .middle p span{
+    color: var(--main);
+}
+.listing .container .card .right .details .bottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.listing .container .card .right .details .bottom .side-1{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.listing .container .card .right .details .bottom .side-1 p{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    opacity: 0.8;
+}
+.listing .container .card .right .details .bottom .side-2 button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #000000a1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.listing .container .card .right .details .bottom .side-2 button i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main);
+    background-color: var(--main);
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+}
+.listing .container .card .right .details .bottom .side-2 button:hover{
+    background-color: var(--main);
+    color: #fff;
+}
+@media (max-width:1010px) {
+    .listing .container .card{
+        flex-direction: column;
+        width: 80%;
+    }
+    .listing .container .card .left{
+        width: 100%;
+    }
+    .listing .container .card .left img{
+        width: 100%;
+    }
+    .listing .container .card .right .details .top{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .listing .container .card .right .details .bottom{
+        flex-direction: column;
+        gap: 20px;
+        direction: rtl;
+    }
+    .listing .container .card .right .details .bottom .side-1 ,
+    .listing .container .card .right .details .bottom .side-2{
+        direction: ltr;
+    }
+
+}
+/* sec-listing */
+
+
+
+
+
+
+
+
+
+
+
+
+/* sec-contact */
+.contact .container{
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.contact .container .left{
+    height: 100%;
+}
+.contact .container .left iframe{
+    height: 100%;
+    width: 500px;
+}
+.contact .container .right{
+    padding: 30px;
+}
+.contact .container .right form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact .container .right form .name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.contact .container .right form .name input{
+    width: calc((100% - 74px) / 2);
+    padding: 15px;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+}
+.contact .container .right form .name input::placeholder ,
+.contact .container .right form .email input::placeholder{
+    font-size: 17px;
+    color: var(--main);
+}
+.contact .container .right form .email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact .container .right form .email input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--main);
+}
+.contact .container .right form .checkbox{
+    width: 73%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.contact .container .right form .checkbox label{
+    color: var(--main);
+}
+.contact .container .right form .text textarea{
+    border-radius: 10px;
+    border: var(--main) 1px solid;
+    padding: 15px;
+    width: 100%;
+    height: 30vh;
+    box-sizing: border-box;
+}
+.contact .container .right form .text textarea::placeholder{
+    color: var(--main);
+}
+.contact .container .right form button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--main);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+    width: 45%;
+}
+.contact .container .right form button i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main);
+    background-color: var(--sec);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 50%;
+}
+.contact .container .right form button:hover{
+    background-color: var(--sec);
+}
+.contact .container .right form input:focus{
+    outline: none;
+}
+.contact .container .right form textarea:focus{
+    outline: none;
+}
+@media (max-width:1210px) {
+    .contact .container .right{
+        padding: 15px;
+    }
+    /* .contact .container .right form .name input{
+        width: 100%;
+    } */
+}
+@media (max-width:1180px) {
+    .contact .container{
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+        align-items: flex-start;
+    }
+    .contact .container .left{
+        width: 100%;
+    }
+    .contact .container .left iframe{
+        width: 100%;
+        height: 50vh;
+    }
+    .contact .container .right{
+        justify-content: flex-start;
+        padding: 0;
+        width: 100%;
+    }
+    .contact .container .right form{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .contact .container .right form .name{
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .contact .container .right form .name input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .contact .container .right form .email{
+        width: 100%;
+    }
+    .contact .container .right form .email input{
+        width: 100%;
+    }
+    .contact .container .right form button{
+        width: 25%;
+    }
+}
+@media (max-width:723px) {
+    .contact .container .right form button{
+        width: 50%;
+    }
+}
+@media (max-width:317px) {
+    .contact .container .right form button{
+        width: 70%;
+    }
+}
+
+/* sec-contact */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sec-links */
+.links .container{
+    display: flex;
+    align-items: flex-start;
+    padding: 0 20px;
+    gap: 40px;
+}
+.links .container .card-1 ,
+.links .container .card-2 ,
+.links .container .card-3{
+    width: calc((100% - 80px) / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.links .container .card-1 img{
+    width: max-content;
+}
+.links .container .card-1 p ,
+.links .container .card-3 p{
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 2;
+}
+.links .container .card-2 b ,
+.links .container .card-3 b{
+    color: var(--main);
+    font-size: 18px;
+    text-align: center;
+}
+.links .container .card-2 .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.links .container .card-2 .list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.links .container .card-2 .list ul li{
+    list-style: none;
+}
+.links .container .card-2 .list ul li a ,
+.links .container .card-3 .num a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
+    font-size: 17px;
+    transition: 0.5s;
+}
+.links .container .card-2 .list ul li a:hover ,
+.links .container .card-3 .num a:hover{
+    color: var(--main);
+    text-decoration: underline 1px solid;
+}
+.links .container .card-3 .num{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+@media (max-width:985px) {
+    .links .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .links .container .card-1{
+        flex-direction: column;
+        width: 100%;
+    }
+    .links .container .card-2{
+        width: 100%;
+    }
+    .links .container .card-2 .list{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .links .container .card-3 .num{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .links .container .card-3{
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .links .container .card-2 .list{
+        align-items: center;
+        justify-content: center;
+    }
+    .links .container .card-2 .list ul{
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* sec-links */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    padding: 50px;
+}
+footer article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+footer article p{
+    font-weight: 300;
+    font-size: 15px;
+}
+/* footer */
